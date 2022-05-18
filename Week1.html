@@ -1,2 +1,154 @@
-<p>test</p>
-<h1>title</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week1</title>
+    <meta name="author" content="Your name" />
+    <meta name="keywords" content="blog, kitchen" />
+
+    <link rel="shortcut icon" href="img2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Week1.css">
+
+    <script src="my-js-file.js"></script>
+
+</head>
+
+<body>
+    <a href="#p1">Go to bottom</a>
+    <h1>Title H1</h1>
+    <h2>Title H2</h2>
+    <h3>Title H3</h3>
+    <h4>Title H4</h4>
+    <h5>Title H5</h5>
+    <h6>Title H6</h6>
+    <p>This is an <span style="color:red">important</span> paragraph.</p>
+
+    <img src="img1.jpg" alt="Website image" width="40px" border="3px">
+
+    <table>
+        <tr>
+            <td><img src="img1.jpg" height="40px"></td>
+            <td>
+                <p>Row1 Col2</p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="img1.jpg" height="40px"></td>
+            <td>
+                <p>Row2 Col2</p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="img1.jpg" height="40px"></td>
+            <td>
+                <p>Row3 Col2</p>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Formular</h1>
+    <form>
+        <label for="username">Username: </label>
+        <input type="text" id="username" />
+
+        <div>
+            <label for="comments">Comments: </label>
+            <textarea name="Comments" id="comments" tabindex="1"></textarea>
+        </div>
+
+        <fieldset>
+            <legend>Checkboxes</legend>
+            <label>Fruits: </label>
+            <input type="checkbox" name="fruit" value="apple" />
+            <label> Apple </label>
+            <input type="checkbox" name="fruit" value="banana" />
+            <label> Banana </label>
+            <input type="checkbox" name="fruit" value="pear" />
+            <label> Pear </label>
+        </fieldset>
+
+        <label>Fruits: </label>
+        <input type="radio" name="fruit" value="apple" />
+        <label> Apple </label>
+        <input type="radio" name="fruit" value="banana" />
+        <label> Banana </label>
+        <input type="radio" name="fruit1" value="pear" />
+        <label> Pear </label>
+
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <select name="gender" multiple>
+            <option value="male">Male</option>
+            <option value="female" selected>Female</option>
+        </select>
+
+        <input type="reset" name="resetBtn" value="Rest the form" />
+        <input type="submit" name="submitBtn" value="Submit" />
+    </form>
+
+    <ol type="I">
+        <li>Mere</li>
+        <li>Banane</li>
+        <ol type="1">
+            <li>Import</li>
+            <li>Local</li>
+        </ol>
+        <li>Portocale</li>
+    </ol>
+
+    <ul type="disc">
+        <li>Mere</li>
+        <li>Banane</li>
+        <ul type="circle">
+            <li>Import</li>
+            <li>Local</li>
+            <ul type="square">
+                <li>Cluj</li>
+                <li>Bucuresti</li>
+                <li>Galati</li>
+            </ul>
+        </ul>
+        <li>Portocale</li>
+    </ul>
+
+    <ul type="disc">
+        <li>Mere</li>
+        <li>Banane</li>
+        <ul type="circle">
+            <li>Import</li>
+            <li>Local</li>
+            <ul type="square">
+                <li>Cluj</li>
+                <li>Bucuresti</li>
+                <li>Galati</li>
+            </ul>
+        </ul>
+        <li>Portocale</li>
+    </ul>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>A markup language ...</dd>
+        <dt>CSS</dt>
+        <dd>Language used to ...</dd>
+    </dl>
+
+    <p>Text with <em>emphasize</em></p>
+    <p>Text with <strong>bold</strong></p>
+
+    <a href="http://www.google.com" title="Google" target="_blank">Link to an external site</a>
+
+    <a href="Week2.html">Link to Week2</a>
+
+    <div>
+        <a href="Child/Child.html">Link to Child</a>
+    </div>
+
+    <p id="p1">I'm a paragraph</p>
+    <a href="Week2.html#p2">Go to section p2 from Week2</a>
+</body>
+
+</html>
