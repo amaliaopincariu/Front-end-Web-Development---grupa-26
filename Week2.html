@@ -1,109 +1,207 @@
-<p>I'm week 2</p>
+<!DOCTYPE html>
+<html lang="en">
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Pere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+<head>
+    <title>Week2</title>
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="blog, kitchen" />
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+        /* p {
+            color: blue;
+        }
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+        .red {
+            color: red;
+        }
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+        #paragraph {
+            color: brown;
+        }
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+        .combinators-selectors + p {
+            color: pink;
+        }
 
-<ul type="disc">
-    <li>Mere</li>
-    <li>Banane</li>
-    <ul type="circle">
-        <li>Import</li>
-        <li>Local</li>
-        <ul type="square">
-            <li>Cluj</li>
-            <li>Bucuresti</li>
-            <li>Galati</li>
-        </ul>
-    </ul>
-    <li>Portocale</li>
-</ul>
+        .attribute-selectors [class*="error"] {
+            color: red;
+        } */
 
-<p id="p2">Test</p>
+        /* .pseudo-classes p:nth-of-type(2) {
+            color: red;
+        }
+
+        .pseudo-classes a:hover {
+            color: green;
+        }
+
+        q::before {
+            content: "<<";
+            color: green;
+        }
+
+        q::after {
+            content: ">>";
+            color: green;
+        }
+
+        .multiple-selectors .error-1, .error-2 {
+            color: red;
+        } */
+
+        /* html {
+            font-size: 40px;
+        }
+
+        .font-properties {
+            font-size: 20px;
+        } */
+
+        .font-properties .font-size-px {
+            font-size: 30px;
+            font-style: oblique;
+            font-weight: lighter;
+            text-transform: capitalize;
+            /* text-decoration: line-through; */
+            text-shadow: 2px 2px 7px #000000;
+            text-align: end;
+        }
+
+        .font-properties .text-overflow {
+            width: 500px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .font-properties .shorthand {
+            font: 
+            italic
+            normal
+            bold
+            normal
+            15px
+            Arial
+        }
+
+        /* .font-properties .font-size-em {
+            font-size: 2rem;
+        } */
+
+        .colors .color-style {
+            /* color: rgba(255, 255, 0, 0.5); */
+            background-color: blueviolet;
+            opacity: 0.5;
+        }
+
+        .colors .background-image {
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            background-image: url("Images/img1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .colors .linear-gradient {
+            width: 500px;
+            height: 500px;
+            background-image: linear-gradient(
+                to bottom,
+                yellow,
+                orange
+            );
+        }
+
+        .colors .multiple-backgrounds {
+            width: 500px;
+            height: 500px;
+            background-image: url("Images/mario_PNG69.png"), url("Images/img1.jpg");
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="simple-selectors">
+        <h1>Simple selectors</h1>
+        <p>1. Paragraph</p>
+        <p class="red">2. Paragraph</p>
+        <p id="paragraph">3. Paragraph</p>
+    </div>
+    <hr>
+    <div class="combinators-selectors">
+        <h1>Combinators selectors</h1>
+        <p>1. Paragraph</p>
+        <p>2. Paragraph</p>
+        <div>
+            <p>Nested paragraph</p>
+        </div>
+        <p>3. Paragraph</p>
+    </div>
+    <div>
+        <p>Nested paragraph</p>
+    </div>
+    <p>Combinator Selectors Sibling</p>
+    <hr>
+    <div class="attribute-selectors">
+        <h1>Attribute selectors</h1>
+        <p id="pID">Paragraph1</p>
+        <p class="error">Paragraph2</p>
+        <p class="error main">Paragraph3</p>
+        <p class="error-secondary">Paragraph3</p>
+        <p class="errorsecondary">Paragraph3</p>
+        <p class="secondaryerror">Paragraph3</p>
+        <p class="smtg-error-smtg">Paragraph3</p>
+    </div>
+    <hr>
+    <div class="pseudo-classes">
+        <h1>Pseudo-classes</h1>
+        <p class="">Pseudo class 1</p>
+        <p>Pseudo class 2</p>
+        <div>
+            <p>Test2</p>
+        </div>
+        <p>Pseudo class 3</p>
+        <a href="https://google.ro">Go to Google</a>
+    </div>
+    <hr>
+    <div class="pseudo-elements">
+        <h1>Pseudo-elements</h1>
+        <q>Some quotes</q> text goes here <q>another quotes</q>
+    </div>
+    <hr>
+    <div class="multiple-selectors">
+        <h1>Multiple selectors</h1>
+        <p class="error-1">Paragraph 1</p>
+        <p class="error-2">Paragraph 1</p>
+        <p id="errorID">Paragraph 1</p>
+    </div>
+    <hr>
+    <div class="font-properties">
+        <h1 class="original">Font Properties</h1>
+        <h1 class="font-size-px">Font size PX1</h1>
+        <h1 class="font-size-px">Font size PX2</h1>
+        <p class="shorthand">Test</p>
+        <p class="text-overflow">I'm a very long text I'm a very long text I'm a very long text I'm a very long text I'm a very long text </p>
+        <!-- <h1 class="font-size-em">Font size EM</h1>
+        <h1 class="font-size-em">Font size EM</h1>
+        <h1 class="font-size-em">Font size EM</h1> -->
+    </div>
+    <hr>
+    <div class="colors">
+        <h1>Colors & Background Colors</h1>
+        <p class="color-style">Paragraph1</p>
+        <div class="background-image"></div>
+        <div class="linear-gradient"></div>
+        <div class="multiple-backgrounds"></div>
+    </div>
+</body>
+
+</html>
