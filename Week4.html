@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week4</title>
+    <meta name="author" content="Andrei Dascal">
+    <style>
+        .menu {
+            display: inline-flex;
+            width: 1000px;
+            background: linear-gradient(90deg, #8264f6, #66d390);
+            color: white;
+        }
+
+        .menu .menu-item {
+            flex-grow: 1;
+            padding: 20px;
+            border-right: 1px solid white;
+        }
+
+        .menu .menu-item:last-child {
+            border-right: none;
+        }
+
+        .menu .item-2 {
+            flex-grow: 3;
+            padding: 20px 60px;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-item">Home</div>
+        <div class="menu-item item-2">Catalog</div>
+        <div class="menu-item">Cart</div>
+        <div class="menu-item">Profile</div>
+    </div>
+</body>
+
+</html>
