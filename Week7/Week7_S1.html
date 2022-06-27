@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week7-S1</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="week7" />
+
+    <script src="javascript.js"></script>
+    <script>
+        console.log("Javascript head");
+
+        console.log("---Escape charachters---");
+        var phrase1 = "It's just Javascript.";
+        console.log(phrase1);
+
+        var phrase2 = "It's just Javascript and is \"not\" that scary";
+        console.log(phrase2);
+
+        console.log("---Arithmetic operation on diferent types---");
+        var age = 33;
+        var ageAsString = '44';
+        console.log(age + ageAsString);
+
+        console.log("---Undefined vs null---");
+        var undefinedAge;
+        console.log(undefinedAge);
+        undefinedAge = 5;
+        console.log(undefinedAge);
+        undefinedAge = null;
+        console.log(undefinedAge);
+
+        console.log("---== vs ===---");
+        var age = 33;
+        var ageAsString = '33';
+
+        if (age === ageAsString) {
+            console.log("IF statement");
+        } else {
+            console.log("ELSE statement1");
+            console.log("ELSE statement2");
+        }
+
+        var gender = "Male";
+
+        if (age > 30) {
+            if (gender === "Male") {
+                console.log("You are a male over 30 years old.");
+            } else {
+                console.log("You are a female over 30 years old.");
+            }
+        } else if (age > 20) {
+            console.log("Over 20 years old.");
+        } else if (age > 10) {
+            console.log("Over 10 years old.");
+        } else {
+            console.log("You are too young.");
+        }
+
+        console.log("---NOT---");
+        var age = 20;
+        var minAge = 18;
+        var maxAge = 50;
+
+        if (!(age > minAge && age < maxAge)) {
+            console.log("Access allowed");
+        } else {
+            console.log("Access denied");
+        }
+
+        if (age <= minAge || age >= maxAge) {
+            console.log("Access allowed");
+        } else {
+            console.log("Access denied");
+        }
+
+        console.log("---Arrays---");
+
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[fruits.length - 1]);
+
+        console.log(fruits.toString());
+
+        console.log(fruits.join(" si "));
+
+        console.log(fruits.pop());
+        console.log(fruits.toString());
+
+        console.log(fruits.push("Mango"));
+        console.log(fruits.toString());
+
+        console.log(fruits.shift());
+        console.log(fruits.toString());
+
+        console.log(fruits.unshift("Banana"));
+        console.log(fruits.toString());
+
+        var nephews1 = ["Maria", "Ioan"];
+        var nephews2 = ["Andrei", "Ana", "Tudor"];
+        var nephews3 = ["Dragos", "Andreea"];
+
+        console.log(nephews1.concat(nephews2, nephews3));
+
+        console.log(fruits.slice(2));
+        console.log(fruits.toString());
+
+        console.log(fruits.splice(2, 0, "Lemon", "Kiwi"));
+        console.log(fruits);
+
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.splice(2, 2, "Lemon", "Kiwi"));
+        console.log(fruits);
+
+        var numbers = [400, 5, 7, 1200, 550, 120];
+
+        console.log(numbers.sort(function (a, b) { return a - b }));
+
+        var person1 = {
+            firstName: "John",
+            age: 17
+        }
+
+        var person2 = {
+            firstName: "Christine",
+            age: 19
+        }
+
+        var person3 = {
+            firstName: "Max",
+            age: 17
+        }
+
+        var person4 = {
+            firstName: "Marie",
+            age: 22
+        }
+
+        var personArray = [person1, person2, person3, person4];
+
+        console.log(personArray.sort(function (a, b) {
+            if (a.age > b.age)
+                return 1;
+            else if (a.age < b.age)
+                return -1;
+            else
+                return 0;
+        }));
+
+        console.log("---Control Structures---");
+
+    </script>
+</head>
+
+<body>
+    <!-- <script>
+        console.log("Javascript body");
+    </script> -->
+</body>
+
+</html>
