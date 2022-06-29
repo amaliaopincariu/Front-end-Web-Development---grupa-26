@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week7-S2</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="week7" />
+
+    <script>
+        console.log("---Control Structures---");
+
+        var hour = 10;
+        var greeting;
+
+        if (hour < 18) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+
+        console.log(greeting);
+
+        var dayOfWeek = 6;
+        var isSunny = false;
+        var isCloudy = true;
+        switch (dayOfWeek) {
+            case 6:
+                console.log("Today is Saturday");
+
+                if (!isSunny && !isCloudy) {
+                    console.log("Is sunny");
+                } else {
+
+                }
+
+                console.log("End line");
+
+                break;
+            case 0:
+                console.log("Today is Sunday");
+                break;
+            default:
+                console.log("Looking for the weekend");
+        }
+
+        // 0 - Sunday
+        // 1 - Monday
+        // ...
+        // 6 - Saturday
+
+        switch (dayOfWeek) {
+            case 4:
+            case 5:
+                console.log("Soon is weekend");
+                break;
+            case 0:
+            case 6:
+                console.log("It is weekend");
+                break;
+            default:
+                console.log("Looking for the weekend");
+        }
+
+        for (var i = 0; i < 10; i++) {
+            if (i % 2 === 0)
+                console.log("The number is: ", i);
+        }
+
+        var person1 = {
+            firstName: "John",
+            age: 17
+        }
+
+        var person2 = {
+            firstName: "Christine",
+            age: 19
+        }
+
+        var person3 = {
+            firstName: "Max",
+            age: 17
+        }
+
+        var person4 = {
+            firstName: "Marie",
+            age: 22
+        }
+
+        var personArray = [person1, person2, person3, person4];
+
+        for (var index = 0; index < personArray.length; index++) {
+            console.log("Using index: " + personArray[index].firstName);
+        }
+
+        for (var index in personArray) {
+            console.log("Using index: " + personArray[index].firstName);
+        }
+
+        // personArray.forEach(x => console.log("Using forEach: " + x.firstName));
+
+        for (var person of personArray) {
+            console.log("Using object: " + person.firstName);
+        }
+
+        var counter = 11;
+
+        while (counter < 10) {
+            console.log("Using while: " + counter);
+            counter++;
+        }
+
+        do {
+            console.log("Using do while: " + counter);
+            counter++;
+        }
+        while (counter < 10);
+
+        console.log("---Stopping conditions---");
+
+        for (var i = 0; i < 100; i++) {
+            if (i % 7 !== 0)
+                continue;
+
+            //extra logic
+            console.log("Divided by 7: " + i);
+        }
+
+        for (var i = 0; i < 100; i++) {
+            if (i % 11 !== 0)
+                break;
+
+            //extra logic
+            console.log("Divided by 11: " + i);
+        }
+
+        counter = 0;
+        while (counter < 10) {
+            console.log("Using while with break: " + counter);
+            counter++;
+
+            if (counter === 5)
+                break;
+        }
+
+        console.log("---Unary operator---");
+        console.log(typeof person1.firstName);
+        console.log(typeof person1.age);
+        console.log(typeof person1);
+
+        console.log("---Ternary operator---");
+
+        if (person1.age > 20)
+            console.log("On if statement");
+        else
+            console.log("Else statement");
+
+        console.log(person1.age > 20 ? "On if statement" : "Else statement");
+        console.log(person1.age > 20 && person2.age > 15 ? "On if statement" : "Else statement");
+        person1.age > 20 ? console.log("On if statement") : console.log("Else statement");
+
+        console.log("---Exercises---");
+
+        var students = [
+            "1	Adriana	Davidescu				",
+            "2	Adriana-Florentina	Draganoiu	",
+            "3	Amalia-Loredana	Opincariu	    ",
+            "4	Andreea-Adriana	Miclaus	        ",
+            "5	Andrei-Daniel	Sopca	        ",
+            "6	Biatrice-Ioana	Bolohan	        ",
+            "7	Bogdan-Ionuț	Nanciu	        ",
+            "8	Bulgarasu	Andrei	            ",
+            "9	Constantin	Gheorghe	        ",
+            "10	Cristian	Bejenariu	        ",
+            "11	Diana	Pausan	                ",
+            "12	George Daniel	Caciulita	    ",
+            "13	Iancu-Marius	Bufnea	        ",
+            "14	Laura-Roxana	Lucian	        ",
+            "15	Liana-Andreea	Ones	        ",
+            "16	Lucian-Ionut	Manta	        ",
+            "17	Maria	Potînga	                ",
+            "18	Marius-Florin	Man	            ",
+            "19	Mihai	Dragan	                ",
+            "20	Mircea-Catalin	Baciu	        ",
+            "21	Nicolae	Culda	                ",
+            "22	Norbert-Marton	Komives	        ",
+            "23	Petru	Nicoara	                ",
+            "24	Radu-Viorel	Bașca	            ",
+            "25	Ramona	Runcan	                ",
+            "26	Rares-Vasile	Buşecan	        ",
+            "27	Roxana-Gabriela	Bucur	        ",
+            "28	Șuteu	Alexandru-Teodor	    ",
+            "29	Vasilica Mugurel	Maftei      "
+        ];
+
+        var randomNumber = Math.floor(Math.random() * students.length);
+
+        console.log(students[randomNumber]);
+
+        console.log("---Exercise1---");
+
+        var variableName = "true";
+
+        console.log(typeof variableName);
+
+        switch (typeof variableName) {
+            case "array":
+                console.log("I'm an array");
+                break;
+            case "string":
+                console.log("I'm a string");
+                break;
+            case "number":
+                console.log("I'm a number");
+                break;
+            case "boolean":
+                console.log("I'm a boolean");
+                break;
+            default:
+                console.log("I don't know the type");
+                break;
+        }
+
+        var numbersArray = [11, 4, 9, 100, 88, 111, 1001, 77];
+
+        var min = numbersArray[0];
+        
+        for (var i = 1; i < numbersArray.length; i++) {
+            if (numbersArray[i] >= min)
+                continue;
+
+            min = numbersArray[i];
+        }
+
+        var sum = 0;
+
+        for (var i = 0; i < numbersArray.length; i++) {
+            sum += numbersArray[i];
+        }
+
+        console.log(sum);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
