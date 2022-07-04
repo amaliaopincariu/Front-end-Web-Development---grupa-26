@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week8-S1</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="week8" />
+
+    <script>
+        console.log("---BMI Exercise---");
+
+        var Gender = {
+            Male: "M",
+            Female: "F"
+        }
+
+        var johnDoe = {
+            name: "John Doe",
+            gender: Gender.Male,
+            height: 1.8,
+            weight: 75
+        };
+
+        var maryAnne = {
+            name: "Mary Anne",
+            gender: Gender.Female,
+            height: 1.6,
+            weight: 60
+        };
+
+        var persons = [maryAnne, johnDoe];
+
+        for(var person of persons) {
+            var bmi = Math.floor(person.weight / (person.height * person.height));
+
+            var personDetails = `Name: ${person.name} | Gender: ${person.gender} | BMI: ${bmi} | `;
+
+            if(bmi < 18.5)
+                console.log(personDetails + "Underweight");
+            else if (bmi < 25)
+                console.log(personDetails + "Normal");
+            else 
+                console.log(personDetails + "Overweight");
+        }
+    </script>
+</head>
+
+<body>
+    <p id="id1" class="class-1">I'm a paragraph - 1</p>
+    <p id="id2" class="class-1">I'm a paragraph - 2</p>
+    
+    <img id="imgID" src="../Images/git-setup-1.PNG" width="200" height="200">
+
+    <button type="button" onclick="document.getElementById('id2').style.color = 'blue'">Click</button>
+
+    <h1 onclick="this.innerHTML='Changed text'">I'm a heading</h1>
+
+    <script>
+        console.log("---DOM Manipulation---");
+
+        var elementByID = document.getElementById("id1");
+
+        document.getElementById("id2").innerHTML = "<b>Changed text</b>";
+
+        var elementsByTag = document.getElementsByTagName("p");
+
+        document.getElementById("id2").innerHTML = "1. New text: " + elementsByTag[0].innerHTML;
+
+        var elementsByClassName = document.getElementsByClassName("class-1");
+
+        document.getElementById("id2").innerHTML = "2. New text: " + elementsByClassName[0].innerHTML;
+
+        document.getElementById("imgID").src = "../Images/img1.jpg";
+
+        document.getElementById("id2").style.color = "red";
+        document.getElementById("id2").style.fontSize = "30px";
+
+    </script>
+</body>
+
+</html>
