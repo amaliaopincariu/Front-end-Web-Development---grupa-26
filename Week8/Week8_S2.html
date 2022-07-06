@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week8-S2</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="week8" />
+
+    <script>
+        console.log("---BMI Exercise---");
+
+        var Gender = {
+            Male: "M",
+            Female: "F"
+        }
+
+        var johnDoe = {
+            name: "John Doe",
+            gender: Gender.Male,
+            height: 1.8,
+            weight: 75
+        };
+
+        var maryAnne = {
+            name: "Mary Anne",
+            gender: Gender.Female,
+            height: 1.6,
+            weight: 60
+        };
+
+        var persons = [maryAnne, johnDoe];
+
+        for (var person of persons) {
+            var bmi = Math.floor(person.weight / (person.height * person.height));
+
+            var personDetails = `Name: ${person.name} | Gender: ${person.gender} | BMI: ${bmi} | `;
+
+            if (bmi < 18.5)
+                console.log(personDetails + "Underweight");
+            else if (bmi < 25)
+                console.log(personDetails + "Normal");
+            else
+                console.log(personDetails + "Overweight");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="divID">
+        <p id="id1" class="class-1">I'm a paragraph - 1</p>
+        <p id="id2" class="class-1">I'm a paragraph - 2</p>
+        <p id="id3" class="class-1">I'm a paragraph - 3</p>
+        <p id="id4" class="class-1">I'm a paragraph - 4</p>
+    </div>
+
+    <button onclick="document.getElementById('id2')?.remove()">Remove Paragraph with id2</button>
+
+    <script>
+        console.log("---DOM Manipulation cont---");
+
+        // document.getElementById("id2").innerHTML = document.getElementById("id1").innerHTML;
+
+        var paragraph1 = document.createElement("p");
+        var textContent1 = document.createTextNode("I'm a NEW paragraph");
+        paragraph1.appendChild(textContent1);
+
+        document.getElementById("divID").appendChild(paragraph1);
+
+        var newParagraph = document.createElement("p");
+        var newTextContent = document.createTextNode("I'm a NEW paragraph - 2");
+        newParagraph.appendChild(newTextContent);
+
+        var existingDivContainer = document.getElementById("divID");
+        var existingChild = document.getElementById("id1");
+
+        existingDivContainer.insertBefore(newParagraph, existingChild);
+
+        var existingDivContainer = document.getElementById("divID");
+        var elementToBeDeleted = document.getElementById("id3");
+
+        existingDivContainer.removeChild(elementToBeDeleted);
+
+        var existingDivContainer = document.getElementById("divID");
+        var existingChild = document.getElementById("id4");
+        
+        var newChild = document.createElement("p");
+        var newTextContent = document.createTextNode("I'm a NEW paragraph - 4");
+        newChild.appendChild(newTextContent);
+
+        existingDivContainer.replaceChild(newChild, existingChild);
+
+    </script>
+</body>
+
+</html>

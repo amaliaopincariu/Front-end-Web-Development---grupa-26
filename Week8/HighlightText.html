@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Highlight long words</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="highlight" />
+
+</head>
+
+<body>
+    <div>
+        <p id="id1" class="class-1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, suscipit quae recusandae assumenda numquam delectus adipisci placeat laboriosam quisquam culpa illo explicabo in impedit dolore deserunt corporis saepe excepturi? Id?
+        </p>
+        <p id="id2" class="class-2">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, suscipit quae recusandae assumenda numquam delectus adipisci placeat laboriosam quisquam culpa illo explicabo in impedit dolore deserunt corporis saepe excepturi? Id?
+        </p>
+    </div>
+
+    <script>
+        var treshold = 7;
+        var separator = ' ';
+
+        // var splittedArray = [
+        //     "Lorem",
+        //     "ipsum,",
+        //     "dolor"
+        // ];
+
+        // var mapResultArray = [
+        //     "Lorem",
+        //     "<span style="background-color: yellow">ipsum,</span>",
+        //     "dolor"
+        // ];
+
+        var paragraph = document.getElementById("id1");
+
+        paragraph.innerHTML = paragraph.innerText
+            .split(separator)
+            .map(word => word.length > treshold ? `<span style="background-color: yellow">${word}</span>` : word)
+            .join(separator);
+
+    </script>
+</body>
+
+</html>

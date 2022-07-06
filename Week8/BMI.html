@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BMI</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="BMI" />
+</head>
+
+<body>
+    <div id="containerID">
+
+    </div>
+
+    <script>
+        console.log("---BMI Exercise---");
+
+        var Gender = {
+            Male: "M",
+            Female: "F"
+        }
+
+        var johnDoe = {
+            name: "John Doe",
+            gender: Gender.Male,
+            height: 1.8,
+            weight: 100
+        };
+
+        var maryAnne = {
+            name: "Mary Anne",
+            gender: Gender.Female,
+            height: 1.6,
+            weight: 60
+        };
+
+        var janeDoe = {
+            name: "Jane Doe",
+            gender: Gender.Female,
+            height: 1.6,
+            weight: 45
+        };
+
+        var persons = [maryAnne, johnDoe, janeDoe];
+
+        var container = document.getElementById('containerID');
+
+        for (var person of persons) {
+            var bmi = Math.floor(person.weight / (person.height * person.height));
+
+            var personDetails = `Name: ${person.name} | Gender: ${person.gender} | BMI: ${bmi} | `;
+
+            var textColor;
+            var bmiValue;
+            if (bmi < 18.5) {
+                bmiValue = 'Underweight';
+                textColor = 'blue';
+            } else if (bmi < 25) {
+                bmiValue = 'Normal';
+                textColor = 'green';
+            } else {
+                bmiValue = 'Overweight';
+                textColor = 'red';
+            }
+
+            var paragraph = document.createElement("p");
+            var textContent = document.createTextNode(personDetails + bmiValue);
+            paragraph.style.color = textColor;
+            paragraph.appendChild(textContent);
+
+            container.appendChild(paragraph);
+        }
+
+    </script>
+</body>
+
+</html>

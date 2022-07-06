@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book List</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="books" />
+
+</head>
+
+<body>
+    <div id="containerID">
+        <h1>My Books List</h1>
+    </div>
+
+    <script>
+        var books = [
+            {
+                title: 'Title1',
+                author: 'Author1'
+            },
+            {
+                title: 'Title2',
+                author: 'Author2'
+            },
+            {
+                title: 'Title3',
+                author: 'Author3'
+            }
+        ];
+
+        var container = document.getElementById('containerID');
+        
+        // var heading = document.createElement('h1');
+        // var textDescription = document.createTextNode('My Books List');
+        // heading.appendChild(textDescription);
+
+        //container.appendChild(heading);
+
+        for(var i = 0; i < books.length; i++) {
+            var paragraph = document.createElement('p');
+            var textDescription = document.createTextNode(books[i].title + ' by ' + books[i].author);
+            paragraph.appendChild(textDescription);
+
+            container.appendChild(paragraph);
+        }
+    </script>
+</body>
+
+</html>
