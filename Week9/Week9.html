@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week9</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week9" />
+</head>
+
+<body>
+    <div id="containerID">
+
+        <p onclick="changeText(this)">Click text</p>
+        <p id="paragraphID">Click text</p>
+
+    </div>
+    <script>
+        var paragraph = document.createElement('p');
+        paragraph.appendChild(document.createTextNode(product(2, 3)));
+        document.getElementById('containerID').appendChild(paragraph);
+
+        // console.log(product(2,3));
+        // console.log(product(2,100));
+        // console.log(product(5,120));
+        // console.log(product(12,13));
+        // console.log(product(21,31));
+
+        var calculator = {
+            number1: 2,
+            number2: 10,
+            product: function () {
+                return this.number1 * this.number2;
+            }
+        }
+
+        console.log(calculator.product());
+
+        function product(number1, number2) {
+            var result = number1 * number2;
+            // console.log(`Product result of ${number1} and ${number2} is ${result}`);
+            return result;
+        }
+
+        // document.getElementById('paragraphID').onclick = function() {
+        //     document.getElementById('paragraphID').innerText = "New new Text";
+        // };
+
+        document.getElementById('paragraphID').addEventListener("click", changeText);
+
+        function changeText() {
+            console.log('Test');
+        }
+
+        console.log('---Recursivity---');
+
+        function counter(number) {
+            console.log(number);
+
+            var newNumber = number - 1;
+
+            if (newNumber > 0)
+                counter(newNumber);
+        }
+
+        counter(10);
+
+        console.log('---Closures---');
+
+        var global = "The number incremented is: ";
+        // var numberVariable = 9;
+
+        function numberGenerator(number1) {
+            var numberVariable = number1;
+            
+            function checkNumber(number2) {
+                if (number2 > number1)
+                    console.log(global + ' ' + numberVariable);
+                else
+                    console.log("On else statement");
+            }
+
+            numberVariable++;
+
+            return checkNumber;
+        }
+
+        var number1 = numberGenerator(5);
+        var number2 = numberGenerator(15);
+        number1(7);
+        number2(14);
+
+        console.log('---Debug---');
+
+        function counter(number) {
+            console.log(number);
+            // debugger;
+            var newNumber = number - 1;
+
+            if (newNumber > 0)
+                counter(newNumber);
+        }
+
+        counter(10);
+    </script>
+</body>
+
+</html>

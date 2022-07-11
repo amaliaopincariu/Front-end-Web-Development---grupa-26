@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BMI</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="BMI" />
+</head>
+
+<body>
+    <div id="containerID">
+
+    </div>
+
+    <script>
+        console.log("---BMI Exercise---");
+
+        var Gender = {
+            Male: "M",
+            Female: "F"
+        }
+
+        var johnDoe = createPerson("John Doe", Gender.Male, 1.8, 100);
+        var maryAnne = createPerson("Mary Anne", Gender.Female, 1.6, 60);
+        var janeDoe = createPerson("Jane Doe", Gender.Female, 1.6, 45);
+
+        var persons = [maryAnne, johnDoe, janeDoe];
+
+        var container = document.getElementById('containerID');
+
+        // for (var person of persons) {
+        //     var personDetails = getPersonDetails(person);
+
+        //     var paragraph = document.createElement("p");
+        //     var textContent = document.createTextNode(personDetails.detailText);
+        //     paragraph.style.color = personDetails.textColor;
+        //     paragraph.appendChild(textContent);
+
+        //     //some complex logic here;
+
+        //     container.appendChild(paragraph);
+        // }
+
+        for (var person of persons) {
+            var bmi = person.bmi();
+
+            var personDetails = `Name: ${person.name} | Gender: ${person.gender} | BMI: ${bmi} | `;
+            
+            var paragraph;
+            if (bmi < 18.5) {
+                paragraph = getParagraphElement(personDetails + 'Underweight','blue');
+            } else if (bmi < 25) {
+                paragraph = getParagraphElement(personDetails + 'Normal','green');
+            } else {
+                paragraph = getParagraphElement(personDetails + 'Overweight','red');
+            }
+
+            container.appendChild(paragraph);
+        }
+
+        function createPerson(name, gender, height, weight) {
+            return {
+                name: name,
+                gender: gender,
+                height: height,
+                weight: weight,
+                bmi: function () {
+                    return Math.floor(this.weight / (this.height * this.height))
+                }
+            };
+        }
+
+        function getPersonDetails(person) {
+            // var bmi = Math.floor(person.weight / (person.height * person.height));
+
+            var bmi = person.bmi();
+
+            var personDetails = `Name: ${person.name} | Gender: ${person.gender} | BMI: ${bmi} | `;
+
+            var textColor;
+            var bmiValue;
+            if (bmi < 18.5) {
+                bmiValue = 'Underweight';
+                textColor = 'blue';
+            } else if (bmi < 25) {
+                bmiValue = 'Normal';
+                textColor = 'green';
+            } else {
+                bmiValue = 'Overweight';
+                textColor = 'red';
+            }
+
+            return {
+                detailText: personDetails + bmiValue,
+                textColor: textColor
+            };
+        }
+
+        function getParagraphElement(personDetails, textColor) {
+            var paragraph = document.createElement("p");
+            var textContent = document.createTextNode(personDetails);
+            paragraph.style.color = textColor;
+            paragraph.appendChild(textContent);
+
+            return paragraph;
+        }
+
+    </script>
+</body>
+
+</html>
