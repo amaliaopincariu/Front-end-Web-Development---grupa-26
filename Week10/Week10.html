@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week10</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week10" />
+</head>
+
+<body>
+
+    <div id="containerID">
+        <div>
+            <button type="button" onclick="loadAllPostsUsingXML()">Load Posts via XML</button>
+            <button type="button" onclick="loadPostUsingXML()">Load Post via XML</button>
+            <button type="button" onclick="addPostUsingXML()">Add post via XML</button>
+            <button type="button" onclick="updatePostUsingXML()">Update post via XML</button>
+            <button type="button" onclick="deletePostUsingXML()">Delete post via XML</button>
+        </div>
+        <div>
+            <button type="button" onclick="loadAllPostsUsingFetch()">Load Posts via Fetch</button>
+        </div>
+        <p id="postID"></p>
+    </div>
+
+    <script>
+        var apiURL = "https://jsonplaceholder.typicode.com/posts/";
+
+        function addPostUsingXML() {
+            var post = {
+                "userId": 101,
+                "id": 101,
+                "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            };
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+                    document.getElementById("postID").innerText = "Done - the post is added";
+                }
+            };
+            xhttp.open("POST", apiURL, true);
+            xhttp.send(JSON.stringify(post));
+        }
+
+        function loadAllPostsUsingXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                    var posts = JSON.parse(this.responseText);
+
+                    for (var index = 0; index < posts.length; index++) {
+                        var paragraph = document.createElement('p');
+                        var textContent = document.createTextNode(posts[index].title);
+                        paragraph.append(textContent);
+
+                        if (index % 2 === 0)
+                            paragraph.style.backgroundColor = 'gray';
+
+
+                        document.getElementById('containerID').appendChild(paragraph);
+                    }
+                }
+            };
+            xhttp.open("GET", apiURL, true);
+            xhttp.send();
+        }
+
+        function loadPostUsingXML() {
+            var postID = 1;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                    document.getElementById("postID").innerHTML = JSON.parse(this.responseText).title;
+                }
+            };
+            xhttp.open("GET", `${apiURL}${postID}`, true);
+            xhttp.send();
+        }
+
+        function updatePostUsingXML() {
+            var post = {
+                "userId": 1,
+                "id": 1,
+                "title": "NEW TITLE",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            };
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                    document.getElementById("postID").innerText = "Done - the post is updated";
+                }
+            };
+            xhttp.open("PUT", `${apiURL}${post.id}`, true);
+            xhttp.send(JSON.stringify(post));
+        }
+
+        function deletePostUsingXML() {
+            var postID = 1;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                    document.getElementById("postID").innerText = "Done - the post is deleted";
+                }
+            };
+            xhttp.open("DELETE", `${apiURL}${postID}`, true);
+            xhttp.send();
+        }
+
+        function loadAllPostsUsingFetch() {
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(error => console.log('Error: ' + error));
+
+            // var xhttp = new XMLHttpRequest();
+            // xhttp.onreadystatechange = function () {
+            //     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            //         var posts = JSON.parse(this.responseText);
+
+            //         for (var index = 0; index < posts.length; index++) {
+            //             var paragraph = document.createElement('p');
+            //             var textContent = document.createTextNode(posts[index].title);
+            //             paragraph.append(textContent);
+
+            //             if (index % 2 === 0)
+            //                 paragraph.style.backgroundColor = 'gray';
+
+
+            //             document.getElementById('containerID').appendChild(paragraph);
+            //         }
+            //     }
+            // };
+            // xhttp.open("GET", apiURL, true);
+            // xhttp.send();
+        } 
+    </script>
+</body>
