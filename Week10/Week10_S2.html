@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week10</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week10" />
+</head>
+
+<body>
+
+    <div id="containerID">
+        <div>
+            <button type="button" onclick="loadAllPostsUsingFetch()">Load Posts via Fetch</button>
+            <button type="button" onclick="loadPostUsingFetch()">Load Post via Fetch</button>
+            <button type="button" onclick="addPostUsingFetch()">Add post via Fetch</button>
+            <button type="button" onclick="updatePostUsingFetch()">Update post via Fetch</button>
+            <button type="button" onclick="deletePostUsingFetch()">Delete post via Fetch</button>
+        </div>
+        <p id="postID"></p>
+    </div>
+
+    <script>
+        var apiURL = "https://jsonplaceholder.typicode.com/posts/";
+
+        function loadAllPostsUsingFetch() {
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(posts => {
+                    for (var index = 0; index < posts.length; index++) {
+                        var paragraph = createParagraphElement(posts[index].title);
+
+                        if (index % 2 === 0)
+                            paragraph.style.backgroundColor = 'gray';
+
+                        addElementOnDOM('containerID', paragraph);
+                    }
+                })
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function loadPostUsingFetch() {
+            //Comes as input
+            var postID = 2;
+
+            fetch(`${apiURL}${postID}`)
+                .then(response => response.json())
+                .then(post => document.getElementById("postID").innerHTML = post.title)
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function addPostUsingFetch() {
+            //Properties comes as input; userID, title, and body
+            var post = {
+                "userId": 101,
+                "id": 101,
+                "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            };
+
+            fetch(`${apiURL}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(post)
+            })
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function updatePostUsingFetch() {
+            //Properties comes as input; userID, title, and body
+            var post = {
+                "userId": 1,
+                "id": 1,
+                "title": "New Text",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            };
+
+            fetch(`${apiURL}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(post)
+            })
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function deletePostUsingFetch() {
+            //Property as input
+            var postID = 2;
+
+            fetch(`${apiURL}${postID}`, {
+                method: 'DELETE'
+            })
+                .then(response => response.json())
+                .then(post => console.log(post))
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        // var p1 = createParagraphElement("This is a new p1");
+        // var test = addElementOnDOM("containerId", p1);
+
+        function createParagraphElement(text) {
+            var paragraph = document.createElement('p');
+            var textContent = document.createTextNode(text);
+            paragraph.append(textContent);
+
+            return paragraph;
+        }
+
+        function addElementOnDOM(parentID, element) {
+            var parentElement = document.getElementById(parentID);
+
+            if (!parentElement) {
+                logError("Error! There is no element with the ID: " + parentID);
+                return;
+            }
+
+            parentElement.appendChild(element);
+        }
+
+        function logError(errorMessage) {
+            console.log(errorMessage);
+        }
+
+
+        var myPromise = new Promise((resolve, reject) => {
+            var isSuccess = false;
+
+            setTimeout(() => {
+                if (isSuccess)
+                    resolve('Success');
+                else
+                    reject("Error");
+            }, 1000)
+        });
+
+        myPromise
+            // .then(value => { return value + ' and' })
+            // .then(value => { return value + ' it' })
+            // .then(value => { return value + ' should' })
+            // .then(value => { return value + ' work' })
+            .then(
+                value => { console.log(value); },
+                error => { console.log('There was an error: ' + error); }
+            );
+
+        async function heloWorldAsync() {
+            return "Hello World!";
+        }
+
+        heloWorldAsync()
+            .then(
+                value => { console.log(value); },
+                error => { console.log('There was an error: ' + error); }
+            )
+
+        async function heloWorldDOMAsync() {
+            var myPromise = new Promise((resolve, reject) => {
+                var isSuccess = true;
+
+                setTimeout(() => {
+                    if (isSuccess)
+                        resolve('Success');
+                    else
+                        reject("Error");
+                }, 3000)
+            });
+
+            console.log("BEFORE");
+
+            document.getElementById('postID').innerText = await myPromise;
+
+            console.log("AFTER");
+        }
+
+        heloWorldDOMAsync();
+    </script>
+</body>

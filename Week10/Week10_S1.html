@@ -6,6 +6,8 @@
 
     <meta name="author" content="Andrei Dascal" />
     <meta name="keywords" content="Week10" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 
 <body>
@@ -20,6 +22,9 @@
         </div>
         <div>
             <button type="button" onclick="loadAllPostsUsingFetch()">Load Posts via Fetch</button>
+        </div>
+        <div>
+            <button type="button" onclick="loadAllPostsUsingJQuery()">Load Posts via JQuery</button>
         </div>
         <p id="postID"></p>
     </div>
@@ -138,6 +143,12 @@
             // };
             // xhttp.open("GET", apiURL, true);
             // xhttp.send();
-        } 
+        }
+
+        function loadAllPostsUsingJQuery() {
+            var postID = 1;
+
+            $("#postID").load(`${apiURL}${postID}`);
+        }
     </script>
 </body>
