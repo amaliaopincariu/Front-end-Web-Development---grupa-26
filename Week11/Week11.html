@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week11</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week11" />
+</head>
+
+<body>
+    <script>
+        console.log('---Object create---');
+        var person = {
+            isAdult: false,
+            printIntroduction: function() {
+                console.log(`My name is ${this.name} and I'm adult: ${this.isAdult}`)
+            }
+        };
+
+        var me = Object.create(person);
+
+        me.name = "Andrei";
+        me.isAdult = true;
+
+        me.printIntroduction();
+
+        console.log('---Call()---');
+
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        function Food(name, price) {
+            Product.call(this, name, price);
+            this.category = 'food';
+        }
+
+        var cheese = new Food('cheese', 5);
+        var bread = new Food('bread', 5);
+
+        console.log(cheese.name);
+
+        console.log('---Arrow functions---');
+
+        const helloWorld = function() {
+            return "Hello World";
+        }
+
+        console.log(helloWorld());
+
+        const helloWorld1 = () => {
+            return "Hello World"
+        }
+
+        console.log(helloWorld1());
+
+        const helloWorld2 = () => "Hello World";
+
+        console.log(helloWorld2());
+
+        const helloWorld3 = (x, y) => `${x} ${y}`;
+
+        console.log(helloWorld3("Hello", "World"));
+
+        console.log('---Spread operator---');
+
+        const arrValue = ["My", "name", "is", "Andrei"];
+
+        console.log(arrValue);
+        console.log(...arrValue);
+        console.log("My", "name", "is", "Andrei");
+        console.log(arrValue[0], arrValue[1], arrValue[2], arrValue[3]);
+
+        const arr1 = [1, 2];
+        const arr2 = [3, 4, 5];
+        const arr3 = [...arr1, ...arr2];
+        //const arr3 = [1, 2, 3, 4, 5];
+
+        console.log(arr3);
+
+        const array1 = [1, 2, 3];
+        const array2 = array1;
+
+        array1.push(4);
+
+        console.log(array1);
+        console.log(array2);
+
+        const array11 = [1, 2, 3];
+
+        // const array12 = [];
+        // for(const i = 0; i < array11.length; i++) {
+        //     array12.push(array11[i]);
+        // }
+
+        const array12 = [...array11];
+
+        array11.push(4);
+
+        console.log(array11);
+        console.log(array12);
+
+        function sum(x, y, z) {
+            console.log(x + y + z);
+        }
+
+        sum(1, 2, 3);
+
+        function sumMultipleNumbers(...numbers) {
+            let sum = 0;
+
+            numbers.forEach((x) => {
+                sum += x;
+            });
+
+            console.log(sum);
+        }
+
+        sumMultipleNumbers(3);
+        sumMultipleNumbers(3, 4, 5, 6, 7);
+
+        console.log('---Let vs const vs var---');
+
+        //console.log(hoisting);
+
+        // var hoisting = "Hoisting";
+        //let hoisting = "Hoisting";
+        
+        function greet() {
+            let hello = 'hello';
+
+            if(true) {
+                let world = 'world';
+
+                console.log(hello + world);
+            }
+
+            //console.log(hello + world);
+        }
+
+        greet();
+
+        // var a = 10;
+        // var a = 15;
+
+        // let b = 10;
+        // let b = 11;
+
+        let hello = 'hello';
+
+        function greet2() {
+            let hello = "HELLO";
+
+            if(true) {
+                let world = 'world';
+
+                console.log(hello + world);
+            }
+
+            //console.log(hello + world);
+        }
+
+        greet2();
+        
+        console.log(hello);
+
+        function greet3() {
+            var hello3 = 'HELLO';
+
+            //do something
+            //bla bla
+
+            if(true) {
+                var hello3 = 'hello';
+                var world = 'world';
+
+                console.log(hello3 + world);
+            }
+
+            console.log(hello3);
+            //console.log(hello + world);
+        }
+
+        greet3();
+
+        let index = 0;
+
+        for(let index = 0; index < 3; index++) {
+            console.log("HelloWorld");
+        }
+
+        console.log(index);
+
+        const varConst = 10;
+        varConst = 11;
+
+        console.log(varConst);
+
+        
+    </script>
+</body>
+
+</html>
