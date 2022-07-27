@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week11</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week11" />
+</head>
+
+<body>
+    <script>
+        const user = {
+            name: 'Andrei Dascal',
+            username: 'andrei.dascal',
+            password: 'password.123',
+            login: function (username, password) {
+                if (this.username === username && this.password === password)
+                    console.log('Login successfully');
+                else
+                    console.log('Authentication failed');
+            }
+        };
+
+        user.login('andrei.dascal', 'password.123');
+        user.login('andrei.dascal', 'password.1234');
+        user.login('andrei.dascal1', 'password.1234');
+
+
+        class Config {
+            static apiURL = 'https://someURLGoesHere.com';
+        }
+
+        class User {
+            #username;
+            #password;
+
+            constructor() {
+                // //call to db to load user by username
+                // //name comes from db
+                // this.name = 'Andrei Dascal';
+                // this.#username = username;
+                // //password comes from db encrypted
+                // this.#password = 'password.123';
+            }
+
+            //CRUD to be implemented
+
+            signUp(name, username, password) {
+                const isUserValid = this.#validateName() &&
+                    this.#validateUsername() &&
+                    this.#validatePassword();
+
+                if(!isUserValid)
+                    return;
+                
+                    //save user to db;
+                this.name = name;
+                this.#username = username;
+                this.#password = password;
+            }
+
+            login(username, password) {
+                //encrypt password to be compared with the existing one;
+                //never decrypt the password saved in the db;
+                if (this.#validateUser(username, password))
+                    console.log('Login successfully');
+                else
+                    console.log('Authentication failed');
+            }
+
+            getUsername() {
+                return this.#username;
+            }
+
+            setPassword(oldPassword, newPassword) {
+                if (!this.#validateUser(username, oldPassword))
+                    return;
+
+                this.#password = newPassword;
+                //save in the db
+            }
+
+            #validateUser(username, password) {
+                return this.#username === username && this.#password === password;
+            }
+
+            #validateName(name) {
+                //implement logic to validate name;
+                return true;
+            }
+
+            #validateUsername(username) {
+                //implement logic to validate password;
+                return true;
+            }
+
+            #validatePassword(password) {
+                //implement logic to validate password;
+                return true;
+            }
+
+            #existingUser(username) {
+                //implement logic to check if there is another user saved;
+                return true;
+            }
+        }
+
+        const andreiD = new User('andrei.dascal');
+
+        andreiD.login('andrei.dascal', 'password.123');
+
+        class Admin extends User {
+            constructor() {
+                //can have some extra logic;
+                super()
+            }
+
+            login(username, password) {
+                //example for method overriding
+                console.log('Login at admin level');
+            }
+
+            removeUser(username) {
+                if(!this.#validateUsernameToBeDeleted(username)) 
+                    return;
+
+                console.log('User removed successfully');
+            }
+
+            #validateUsernameToBeDeleted(username) {
+                //some validation on the user that will be deleted
+                return true;   
+            }
+        }
+
+        const admin = new Admin();
+        admin.signUp('Admin Admin', 'admin', 'pass');
+        admin.login(admin.getUsername(), 'pass');
+        admin.removeUser('as', 'asd');
+        admin.removeUser('as');
+
+        const user1 = new User();
+        user1.signUp('User User', 'user', 'pass1');
+        user1.login(user1.getUsername(), 'pass1');
+
+        //const config = new Config(); 
+        console.log(Config.apiURL);
+    </script>
+</body>
+
+</html>
