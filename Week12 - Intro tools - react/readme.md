@@ -12,4 +12,9 @@ https://javascript.info/modules-intro
 3. Bundle tool: Vite - https://vitejs.dev/ 
 4. SPA - react exemple
 
+# Links
+
+1. https://github.com/features/copilot
+2. https://www.npmjs.com/
+
 
