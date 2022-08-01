@@ -9,6 +9,7 @@
    - `npm install [numele package]` => va descarca si instaleaza un package
         - va descarca tot codul in folderul node_modules
   - `npm uninstall [numele package]` => va sterge un package
+  - `npm install` => va descarca toate package-urile care sunt in package.json la sectiune `dependencies`
 
 
 # Javascript interpretabil
