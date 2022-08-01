@@ -10,4 +10,5 @@ Finalizarea workshop-ului
 
 1. Login inaite sa trimita userul comanda
 2. Pagina de succes / failed cand user incerca sa trimita comanda
-3. Orice mai vrei voi 
+3. Search pentru produse
+4. Orice mai vrei voi 
