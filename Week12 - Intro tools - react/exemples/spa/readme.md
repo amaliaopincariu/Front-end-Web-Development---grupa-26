@@ -15,3 +15,15 @@ Toate sunt SPA
 # Vite tool
 
 - `npm create vite@latest my-first-app -- --template vanilla` => va crea un proiect nou in folderul my-first-app
+
+
+
+
+# SPA App with two pages
+
+Files:
+-  index.html
+     
+-  style.css
+-  index.js
+  - switch de la o pagina la alta o facem in javascript
