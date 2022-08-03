@@ -27,3 +27,7 @@ Files:
 -  style.css
 -  index.js
   - switch de la o pagina la alta o facem in javascript
+
+Blog:
+ - Home page
+ - About page

@@ -16,5 +16,6 @@ https://javascript.info/modules-intro
 
 1. https://github.com/features/copilot
 2. https://www.npmjs.com/
+3. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
