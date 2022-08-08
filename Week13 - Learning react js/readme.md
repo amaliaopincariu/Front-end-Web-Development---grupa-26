@@ -2,6 +2,7 @@
  - https://reactjs.org/tutorial/tutorial.html
  - https://github.com/razvantimis/my-react
 
+## Session 1
 0. What is React Js? Why we need it?
 1. Hello word - https://reactjs.org/docs/add-react-to-a-website.html
 2. Post - title and content
@@ -9,6 +10,7 @@
 4. Components - functie/class, 
 5. Components with props
 6. Add click event 
+## Session 2
 7. State -  Counter App
 8. Condition rendering
 9. State vs props https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props
