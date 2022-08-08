@@ -4,7 +4,7 @@
 
 ## Session 1
 0. What is React Js? Why we need it?
-1. Hello word - https://reactjs.org/docs/add-react-to-a-website.html
+1. Hello world - https://reactjs.org/docs/add-react-to-a-website.html
 2. Post - title and content
 3. JSX Post - style, className
 4. Components - functie/class, 
