@@ -39,6 +39,37 @@ const root = createRoot(container);
 root.render(<App />);
 ```
 
+### Class component
+
+- facem mostenire din React.Component
+- trebuie obligatoriu sa avem o metoda render care returneaza "html" ( jsx )
+
+```jsx
+import React from "react";
+
+class BlogPost extends React.Component {
+  render() {
+    return (
+      <div className="post">
+        <h1>First post</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          quidem.
+        </p>
+      </div>
+    );
+  }
+}
+
+const App = () => (
+  <div>
+    <BlogPost />
+    <BlogPost />
+    <BlogPost />
+  </div>
+);
+```
+
 ## 5. Components with props
 
 ## 6. Add click event

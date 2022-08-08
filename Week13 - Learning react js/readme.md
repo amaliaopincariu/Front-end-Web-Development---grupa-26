@@ -7,10 +7,11 @@
 1. Hello world - https://reactjs.org/docs/add-react-to-a-website.html
 2. Post - title and content
 3. JSX Post - style, className
-4. Components - functie/class, 
+4. Components - functie/class,
+
+## Session 2
 5. Components with props
 6. Add click event 
-## Session 2
 7. State -  Counter App
 8. Condition rendering
 9. State vs props https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props
@@ -24,7 +25,7 @@ Care este diferenta?
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
 11. Life cycle of components https://reactjs.org/docs/state-and-lifecycle.html
 
-Create react project: npm init vite@latest --template react
+Create react project: `npm create vite@latest my-first-react-app -- --template react`
 
 # React router - workshop shoping website
 
