@@ -2,7 +2,7 @@ import './home.css'
 import dayjs from 'dayjs';
 
 const getHomePage = () => {
-  const today = dayjs().format('DD/MM/YYYY');
+  const today = dayjs().startOf('month').format('DD/MM/YYYY');
   console.log(today);
   return `
       <h2 class="home-title">Home page</h2>
