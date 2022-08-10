@@ -81,7 +81,7 @@ Exista tool-uri care fac conversia din jsx in js
 // 1. Create in memoria js a elementului
 
 const post1 = (
-  <div className="post">
+  <div className="post" data="1">
     <h1>First post</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
   </div>
