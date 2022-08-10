@@ -111,7 +111,7 @@ const App = () => {
 const App = (props) => {
   const [counter, setCounter] = useState(0)
   useEffect(() => {
-    // se va executa daca oricare dintre ele se schimba
+    // se va executa daca oricare dintre valorile din props.isOnline si counter se schimba
 
   }, [props.isOnline, counter]);
 
