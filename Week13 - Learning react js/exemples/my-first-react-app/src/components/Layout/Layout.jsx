@@ -7,8 +7,18 @@ function Layout(props) {
         <h1>My Personal Page</h1>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li onClick={
+              function () {
+                console.log('Sa dat click pe home')
+                props.onPageChange('home')
+              }
+            }><a href="#">Home</a></li>
+            <li onClick={
+              function () {
+                console.log('Sa dat click pe About')
+                props.onPageChange('about')
+              }
+            }><a href="#">About</a></li>
           </ul>
         </nav>
       </header>
