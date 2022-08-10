@@ -10,40 +10,28 @@ import HomePage from './pages/HomePage/HomePage'
 //     </Layout>
 //   )
 // }
-
-const BlogPost = (props) => (
-  <div
-    className="post"
-    onClick={() => {
-      console.log("Suntem in componenta BlogPost - sa dat click", props);
-      if (props.onPostClick) { // apelam onPostClick doar daca exista
-        props.onPostClick();
-      }
-    }}
-  >
-    <h1>{props.title}</h1>
-    <p>{props.content}</p>
-  </div>
-);
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const handleClickOnPost = () => {
-    console.log("sa dat click pe post");
-  };
+  const [todoId, setTodoId] = useState(0);
+  const [todoTitle, setTodoTitle] = useState("");
+
+  useEffect(() => {
+    // se executa prima data cand se randeaza componenta
+    fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`)
+      .then(response => response.json())
+      .then(todo => {
+        console.log(todo);
+        setTodoTitle(todo.title);
+      })
+    console.log("execut logica daca se schimba counter");
+  }, [todoId]);
+
   return (
-    <div className="my-app" data-id="1" curs-super="true">
-      <BlogPost
-        title="First post"
-        onPostClick={() => {
-          console.log('Suntem in App cmp - click pe post primul post');
-        }}
-        content=" Lorem ipsum dolor sit amet consectetur adipisi"
-      />
-      <BlogPost title="Second post" content=" tare tare ......" />
-      {/* Second post nu are onPostClick*/}
-      <BlogPost title="Tare post" content="Continut diferit" onPostClick={() => {
-        console.log('Suntem in App cmp - click pe post ultimul post');
-      }} />
+    <div>
+      <span>TodoId: {todoId}</span>
+      <h1>Todo title: {todoTitle} </h1>
+      <button onClick={() => setTodoId(todoId + 1)}>Fetch  next Todo</button>
     </div>
   );
 };
