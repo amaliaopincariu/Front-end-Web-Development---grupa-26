@@ -13,7 +13,7 @@ function Layout(props) {
               {/* <a href="#">Home</a> */}
             </li>
             <li>
-              <Link to='/cart'>Cart</Link>
+              <Link to='/cart'>Cart ({props.itemsCount} items)</Link>
             </li>
           </ul>
         </nav>
