@@ -11,6 +11,11 @@
 - state este per componenta
 - state este tinut in memoria javascript, daca facem refresh la pagina, se pierde
 - orice componenta poate avea unul sau mai multe stari => puntem folosi useState de cate ori vream
+- primul parametru de la useState este valoare initiala si poate fi boolean/string/number/array/object
+
+```js
+ const [cars, setCars] = useState([ { name: 'Dacia' }, { name:"BMW" }])
+```
 
 Counter app
 

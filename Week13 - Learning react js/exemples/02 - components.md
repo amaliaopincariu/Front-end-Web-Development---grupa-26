@@ -48,6 +48,13 @@ root.render(<App />);
 import React from "react";
 
 class BlogPost extends React.Component {
+  constructor(){
+    this.state = {
+      counter: 0,
+    }
+  }
+
+  // this.setState({counter: 1})
   render() {
     return (
       <div className="post">

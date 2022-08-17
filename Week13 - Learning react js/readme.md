@@ -27,10 +27,7 @@ https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopl
 
 Create react project: `npm create vite@latest my-first-react-app -- --template react`
 
-# React router - workshop shoping website
 
-1. How to use a lib?
-2. Use react router
 
 
 # Links
