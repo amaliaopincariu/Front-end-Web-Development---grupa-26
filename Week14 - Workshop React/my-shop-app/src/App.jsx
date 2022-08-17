@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<div>Not Found!</div>} />
         </Routes>
       </Layout>
     </BrowserRouter>
