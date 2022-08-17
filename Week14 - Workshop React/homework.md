@@ -12,3 +12,4 @@ Finalizarea workshop-ului
 2. Pagina de succes / failed cand user incerca sa trimita comanda
 3. Search pentru produse
 4. Orice mai vrei voi 
+5. Pagina unde vedem toate produsele, pretul total si button de trimitere comanda

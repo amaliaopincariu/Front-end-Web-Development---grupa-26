@@ -7,7 +7,6 @@
 3. Fiecare produs afisat va avea un button de "add to cart"
 2. Logica de adaugarea unui produs in cosul de cumparaturi ( un button )
 3. Sa avem in headrul de la site - un text/icon cu cosul de cumparaturi si cate produse am adaugam in el
-4. Pagina unde vedem toate produsele, pretul total si button de trimitere comanda
 
 
 # Step by step
