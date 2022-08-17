@@ -1,4 +1,5 @@
 import './Layout.css';
+import { Link } from "react-router-dom";
 
 function Layout(props) {
   return (
@@ -7,18 +8,14 @@ function Layout(props) {
         <h1>My Personal Page</h1>
         <nav>
           <ul>
-            <li onClick={
-              function () {
-                console.log('Sa dat click pe home')
-                props.onPageChange('home')
-              }
-            }><a href="#">Home</a></li>
-            <li onClick={
-              function () {
-                console.log('Sa dat click pe About')
-                props.onPageChange('about')
-              }
-            }><a href="#">About</a></li>
+            <li>
+              <Link to='/'>Home</Link>
+              {/* <a href="#">Home</a> */}
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+              {/* <a href="#">About</a> */}
+            </li>
           </ul>
         </nav>
       </header>
