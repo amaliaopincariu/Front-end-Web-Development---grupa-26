@@ -5,7 +5,7 @@ function Layout(props) {
   return (
     <div className='layout'>
       <header>
-        <h1>My Personal Page</h1>
+        <h1>My Shop</h1>
         <nav>
           <ul>
             <li>
@@ -13,8 +13,7 @@ function Layout(props) {
               {/* <a href="#">Home</a> */}
             </li>
             <li>
-              <Link to='/about'>About</Link>
-              {/* <a href="#">About</a> */}
+              <Link to='/cart'>Cart</Link>
             </li>
           </ul>
         </nav>
