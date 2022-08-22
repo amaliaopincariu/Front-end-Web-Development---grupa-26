@@ -1,0 +1,55 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+header a {
+  font-weight: 500;
+  color: #201b1b;
+  text-decoration: inherit;
+}
+header a:hover {
+  color: #736a6a;
+}
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: rgb(229, 22, 22);
+  width: 100%;
+}
+
+header h1 {
+  display: flex;
+  font-size: 20px;
+  color: white;
+  flex-shrink: 0;
+}
+
+header nav {
+  width: 100%;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+header ul li {
+  margin-right: 10px;
+  font-size: 20px;
+}
