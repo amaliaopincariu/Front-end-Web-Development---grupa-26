@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week15</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week15" />
+</head>
+
+<body>
+    <p id="windowParagraph"></p>
+    <p id="screenParagraph"></p>
+    <p id="locationParagraph"></p>
+    <button onclick="addNewWindow()">Add new window</button>
+    <div>
+        <button onclick="goBack()">Go Back</button>
+        <button onclick="moveForward()">Move forward</button>
+    </div>
+    <div>
+        <button onclick="simpleAlert()">Simple alert</button>
+        <button onclick="confirmAlert()">Confirm alert</button>
+        <p id="confirmAlertParagraph"></p>
+        <button onclick="promptAlert()">Prompt alert</button>
+        <p id="promptAlertParagraph"></p>
+    </div>
+    <!-- <button onclick="closeWindow()">Close window</button> -->
+
+    <script>
+        document.getElementById("windowParagraph").innerHTML =
+            "Browser inner window width: " + window.innerWidth + "px <br>" +
+            "Browser inner window height: " + window.innerHeight + "px";
+
+        document.getElementById("screenParagraph").innerHTML =
+            "Screen width: " + screen.width + "px <br>" +
+            "Screen height: " + screen.height + "px";
+
+        document.getElementById("locationParagraph").innerHTML =
+            "Location href: " + location.href + "<br>" +
+            "Location protocol: " + location.protocol;
+
+        function addNewWindow() {
+            window.open("Week15_2.html");
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function moveForward() {
+            history.forward();
+        }
+
+        function simpleAlert() {
+            window.alert("Simple alert box");
+        }
+
+        function confirmAlert() {
+            let choice;
+
+            if (window.confirm("Confirm alert box. Please press a button!"))
+                choice = "You pressed OK!";
+            else
+                choice = "You pressed Cancel!";
+
+            document.getElementById("confirmAlertParagraph").innerText = choice;
+        }
+
+        function promptAlert() {
+            let text;
+
+            const username = window.prompt("Prompt alert box. Please enter your username!");
+
+            if (username == null || username == "")
+                text = "User is empty";
+            else
+                text = "Your username is " + username;
+
+            document.getElementById("promptAlertParagraph").innerText = text;
+        }
+    </script>
+</body>
+
+</html>

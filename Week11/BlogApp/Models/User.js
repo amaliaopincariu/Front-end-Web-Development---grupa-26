@@ -1,4 +1,5 @@
 class User {
+    //call to API to fetch data
     #firstName;
     #lastName;
 
