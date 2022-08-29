@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week16</title>
+
+    <meta name="author" content="Andrei Dascal" />
+    <meta name="keywords" content="Week16" />
+</head>
+
+<body>
+    <!-- <button onclick="counterOnSessionStorage()">Click me</button> -->
+    <button onclick="counterOnLocalStorage()">Click me</button>
+    <p id="result"></p>
+    <script>
+        // localStorage.setItem("language", "ro-RO");
+        // document.getElementById('result').innerText = localStorage.getItem('language');
+
+        function counterOnSessionStorage() {
+            console.log(sessionStorage.clickCount);
+
+            if (sessionStorage.clickCount)
+                sessionStorage.clickCount = Number(sessionStorage.clickCount) + 1;
+            else
+                sessionStorage.clickCount = 1;
+
+            document.getElementById('result').innerText = 'You clicked the button ' + sessionStorage.clickCount + ' times on this session';
+        }
+
+        function counterOnLocalStorage() {
+            console.log(localStorage.clickCount);
+
+            if (localStorage.clickCount)
+            localStorage.clickCount = Number(localStorage.clickCount) + 1;
+            else
+            localStorage.clickCount = 1;
+
+            document.getElementById('result').innerText = 'You clicked the button ' + localStorage.clickCount + ' times on this session';
+        }
+
+        document.cookie = "language=en-US; expires=Thu, 10 Jan 2023 00:00:00 UTC";
+
+        function setCookie(name, value, expiryDays) {
+            const currentDate = new Date();
+            currentDate.setTime(currentDate.getTime() + (expiryDays*24*60*60*1000));
+
+            const cookieString = name + "=" + value + "; expires=" + currentDate.toUTCString();
+
+            document.cookie = cookieString;
+        }
+
+        function getCookieValue(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+
+            const elements = decodedCookie.split(';');
+
+            for(const i = 0; i < elements.length; i++) {
+                const currentElement = elements[i];
+
+                if(currentElement.indexOf(name) == 0) {
+                    return currentElement.substring(name.length, currentElement.length);
+                }
+            }
+
+            return '';
+        }
+    </script>
+</body>
+
+</html>
